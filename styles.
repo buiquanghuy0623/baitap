@@ -1,0 +1,145 @@
+/* Thiết lập chung */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #1c1e21;
+    padding-top: 60px; /* Đẩy nội dung xuống tránh bị header che mất vì dùng fixed */
+}
+
+/* 1. Thiết lập Fixed Header ở trên cùng */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e4e6eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    z-index: 1000; /* Đảm bảo header luôn nổi lên trên các thành phần khác */
+}
+
+.header-left h2 {
+    color: #1877f2;
+    font-size: 24px;
+}
+
+.header-center input {
+    width: 240px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    background-color: #f0f2f5;
+    outline: none;
+}
+
+.header-right span {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* 2. Bố cục chính chứa Sidebar và Content */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* 3. Thiết lập các phần Sidebar */
+.sidebar {
+    width: 250px;
+    position: sticky;
+    top: 76px; /* Cố định vị trí khi cuộn trang, cách header 76px */
+    height: calc(100vh - 92px);
+    overflow-y: auto;
+}
+
+.left-sidebar ul, .right-sidebar ul {
+    list-style: none;
+}
+
+.left-sidebar li, .right-sidebar li {
+    padding: 10px;
+    margin-bottom: 4px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.left-sidebar li:hover, .right-sidebar li:hover {
+    background-color: #e4e6eb;
+}
+
+.left-sidebar a {
+    text-decoration: none;
+    color: #050505;
+    font-weight: 500;
+}
+
+.right-sidebar h3 {
+    font-size: 16px;
+    color: #65676b;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+/* 4. Phần nội dung chính */
+.content {
+    flex: 1;
+    max-width: 600px;
+    margin: 0 20px;
+}
+
+.post-box, .post-card {
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+}
+
+.post-box textarea {
+    width: 100%;
+    height: 60px;
+    border: none;
+    resize: none;
+    outline: none;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.post-box button {
+    width: 100%;
+    padding: 8px;
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.post-box button:hover {
+    background-color: #166fe5;
+}
+
+.post-card h4 {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.post-card p {
+    font-size: 14px;
+    color: #4b4f56;
+}
